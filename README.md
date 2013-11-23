@@ -1,5 +1,4 @@
 # Bramble Framework for Wordpress #
-----------------------------------------------------------
 
 ![Bramble Logo](/source/templates/branding/screenshot.png "Bramble Framework")
 
