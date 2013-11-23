@@ -1762,8 +1762,8 @@ main:after, [role="main"]:after {
 }
 
 .post {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 100%;
   padding: 0 15px;
@@ -1773,8 +1773,8 @@ main:after, [role="main"]:after {
 }
 @media screen and (min-width: 940px) {
   .post {
-    display: block;
     float: left;
+    display: block;
     margin-right: 2.35765%;
     width: 65.88078%;
   }
@@ -1784,8 +1784,8 @@ main:after, [role="main"]:after {
 }
 
 .sidebar {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 100%;
   padding: 0 15px;
@@ -1795,8 +1795,8 @@ main:after, [role="main"]:after {
 }
 @media screen and (min-width: 940px) {
   .sidebar {
-    display: block;
     float: left;
+    display: block;
     margin-right: 2.35765%;
     width: 31.76157%;
   }
@@ -1806,8 +1806,8 @@ main:after, [role="main"]:after {
 }
 
 .widget {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 100%;
 }
@@ -1816,8 +1816,8 @@ main:after, [role="main"]:after {
 }
 @media screen and (min-width: 768px) {
   .widget {
-    display: block;
     float: left;
+    display: block;
     margin-right: 2.35765%;
     width: 48.82117%;
   }
@@ -1833,8 +1833,8 @@ main:after, [role="main"]:after {
 }
 @media screen and (min-width: 940px) {
   .widget {
-    display: block;
     float: left;
+    display: block;
     margin-right: 2.35765%;
     width: 100%;
   }
@@ -1872,8 +1872,8 @@ main:after, [role="main"]:after {
 
 /* Gallery */
 .gallery {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 100%;
   margin-bottom: 1.875em;
@@ -1890,8 +1890,8 @@ main:after, [role="main"]:after {
   margin-bottom: 0.9375em;
 }
 .gallery .gallery-columns-1 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 100%;
 }
@@ -1899,8 +1899,8 @@ main:after, [role="main"]:after {
   margin-right: 0;
 }
 .gallery .gallery-columns-2 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 48.82117%;
 }
@@ -1914,8 +1914,8 @@ main:after, [role="main"]:after {
   clear: left;
 }
 .gallery .gallery-columns-3 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 3.16844%;
   width: 31.22104%;
 }
@@ -1929,8 +1929,8 @@ main:after, [role="main"]:after {
   clear: left;
 }
 .gallery .gallery-columns-4 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 23.23176%;
 }
@@ -1944,8 +1944,8 @@ main:after, [role="main"]:after {
   clear: left;
 }
 .gallery .gallery-columns-5 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.84259%;
   width: 17.72593%;
 }
@@ -1959,8 +1959,8 @@ main:after, [role="main"]:after {
   clear: left;
 }
 .gallery .gallery-columns-6 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.35765%;
   width: 14.70196%;
 }
@@ -1974,8 +1974,8 @@ main:after, [role="main"]:after {
   clear: left;
 }
 .gallery .gallery-columns-7 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 2.01406%;
   width: 12.55938%;
 }
@@ -1989,8 +1989,8 @@ main:after, [role="main"]:after {
   clear: left;
 }
 .gallery .gallery-columns-8 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 1.75788%;
   width: 10.96186%;
 }
@@ -2004,8 +2004,8 @@ main:after, [role="main"]:after {
   clear: left;
 }
 .gallery .gallery-columns-9 .gallery-item {
-  display: block;
   float: left;
+  display: block;
   margin-right: 1.55951%;
   width: 9.72488%;
 }
