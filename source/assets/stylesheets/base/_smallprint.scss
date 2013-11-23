@@ -1,0 +1,16 @@
+/**
+*
+* Smallprint
+*
+**/
+
+/**
+ * A series of classes for setting tiny type; for use in smallprint etc.
+ */
+.smallprint,
+.milli{
+	font-size: $milli-size;
+}
+.micro{
+	font-size: $micro-size;
+}

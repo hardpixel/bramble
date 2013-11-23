@@ -1,0 +1,158 @@
+/* WordPress theme header */
+@import header
+
+
+/* Colors */
+
+$black: #333333
+$white: #fafafa
+
+
+/* Bramble defaults */
+@import defaults
+
+
+/* General */
+
+html
+	font: #{($base-font-size/16px)*1em}/#{$line-height-ratio} $base-font-family
+	overflow-y: scroll
+	min-height: 100%
+
+body
+	background: #ccc
+	color: #333
+	$max-width: em(1280)
+	font-weight: lighter
+
+/* Header */
+
+#document-header
+	+row
+
+.header-inner
+	+outer-container
+
+
+/* Main */
+
+main, [role="main"]
+	+row
+
+#content
+	+outer-container
+
+.post
+	+span-columns(12)
+	padding: 0 15px
+
+	@include media($medium)
+		+span-columns(8)
+
+.sidebar
+	+span-columns(12)
+	padding: 0 15px
+
+	@include media($medium)
+		+span-columns(4)
+
+.widget
+	+span-columns(12)
+
+	@include media($small)
+		+span-columns(6)
+		+omega(2n)
+
+	@include media($medium)
+		+span-columns(12)
+
+
+/* Footer */
+
+#document-footer
+	+row
+
+.footer-inner
+	+outer-container
+
+
+/* Gallery */
+
+.gallery
+	+span-columns(12)
+	margin-bottom: em(30)
+
+	.gallery-items
+		margin: 0
+		padding: 0
+		list-style-type: none
+
+	.gallery-item
+		margin-bottom: em(15)
+
+	.gallery-columns-1
+
+		.gallery-item
+			+span-columns(12)
+
+	.gallery-columns-2
+
+		.gallery-item
+			+span-columns(6)
+			+omega(2n)
+
+	.gallery-columns-3
+
+		.gallery-item
+			+span-columns(3 of 9)
+			+omega(3n)
+
+	.gallery-columns-4
+
+		.gallery-item
+			+span-columns(3)
+			+omega(4n)
+
+	.gallery-columns-5
+
+		.gallery-item
+			+span-columns(2 of 10)
+			+omega(5n)
+
+	.gallery-columns-6
+
+		.gallery-item
+			+span-columns(2)
+			+omega(6n)
+
+	.gallery-columns-7
+
+		.gallery-item
+			+span-columns(2 of 14)
+			+omega(7n)
+
+	.gallery-columns-8
+
+		.gallery-item
+			+span-columns(2 of 16)
+			+omega(8n)
+
+	.gallery-columns-9
+
+		.gallery-item
+			+span-columns(2 of 18)
+			+omega(9n)
+
+	img
+		max-width: 100%
+		width: 100%
+		height: auto
+		border: em(5) solid white
+		box-shadow: 0 0 3px rgba(black, .3)
+		+transition-duration(.3s)
+
+		&:hover
+			box-shadow: 0 0 5px rgba($base-color, .8)
+
+	.caption
+		text-align: center

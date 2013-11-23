@@ -1,0 +1,59 @@
+/**
+*
+* Images
+*
+**/
+
+/**
+ * Fluid images.
+ */
+img{
+	max-width: 100%;
+}
+
+
+/**
+ * Non-fluid images if you specify `width` and/or `height` attributes.
+ */
+img[width],
+img[height]{
+	max-width: none;
+}
+
+
+/**
+ * Rounded images.
+ */
+img.round{
+	border-radius: $brand-round;
+}
+
+
+/**
+ * Image placement variations.
+ */
+img.alignright{
+	float:right;
+	margin-bottom: $base-spacing-unit;
+	margin-left: $base-spacing-unit;
+}
+
+img.alignleft{
+	float: left;
+	margin-right: $base-spacing-unit;
+	margin-bottom: $base-spacing-unit;
+}
+
+img.aligncenter{
+	display: block;
+	margin-right: auto;
+	margin-bottom: $base-spacing-unit;
+	margin-left: auto;
+}
+
+/**
+ * Images in `figure` elements.
+ */
+figure > img{
+	display: block;
+}

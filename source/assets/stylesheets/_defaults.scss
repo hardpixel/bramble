@@ -1,0 +1,107 @@
+/**
+*
+* Additional Frameworks
+*
+**/
+
+@import "bourbon";
+@import "neat";
+
+
+/**
+*
+* Breakpoints
+*
+**/
+
+$tiny: min-width 480px;
+$small: min-width 768px;
+$medium: min-width 940px;
+$large: min-width 1280px;
+
+
+/**
+*
+* Base
+*
+**/
+
+$base-font-size: 16px!default;
+$base-line-height: 24px!default;
+$base-font-family: sans-serif!default;
+$base-color: #954086!default;
+$brand-round: 50%;
+
+
+/**
+*
+* Font sizes
+*
+**/
+
+$h1-size: em(36)!default;
+$h2-size: em(30)!default;
+$h3-size: em(24)!default;
+$h4-size: em(20)!default;
+$h5-size: em(16)!default;
+$h6-size: em(14)!default;
+
+$milli-size: em(12)!default;
+$micro-size: em(10)!default;
+
+
+/**
+*
+* Quotes
+*
+**/
+
+$english-quotes: true!default;
+
+/**
+ * If you want English quotes then please do not edit these; they’re only here
+ * because Sass needs them.
+ */
+$open-quote: null;
+$close-quote: null;
+
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+@if $english-quotes != true{
+    $open-quote: \00AB;
+    $close-quote: \00BB;
+}
+
+
+/**
+*
+* Framework
+*
+**/
+
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+/**
+*
+* Style Includes
+*
+**/
+
+@import "generic/reset";
+@import "generic/normalize";
+@import "base/headings";
+@import "base/images";
+@import "base/paragraphs";
+@import "base/forms";
+@import "base/lists";
+@import "base/quotes";
+@import "base/smallprint";
+@import "base/tables";
+@import "base/code";
+@import "objects/mmenu";
+@import "objects/swipebox";
+@import "objects/popup";
