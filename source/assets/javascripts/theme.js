@@ -1,5 +1,8 @@
-//= require 'main'
+//= require 'plugins/modernizr'
+//= require 'plugins/mmenu'
+//= require 'plugins/sly'
+//= require 'plugins/sequence'
+//= require 'plugins/swipebox'
+//= require 'plugins/minimalect'
 
-jQuery(document).ready(function($) {
-	$('.gallery-item a').swipebox();
-});
+//= require 'main'

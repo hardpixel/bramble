@@ -1,15 +1,13 @@
 <?php
 
-/*========================================
-=            Global Variables            =
-========================================*/
+/*==================================================*/
+/* Global Variables
+/*==================================================*/
 
 	$bramble = array(
 		'theme_uri' => get_template_directory_uri(),
 		'theme_ver' => '1.0'
 	);
-
-	define( 'CUZTOM_URL', $bramble['theme_uri'] .'/includes/cuztom' );
 
 
 /*==================================================*/
@@ -20,19 +18,17 @@
 
 	function bramble_setup()
 	{
-		// Cuztom
-		include( 'includes/cuztom/cuztom.php' );
+		global $bramble;
 
 		// Includes
 		include( 'functions/cleanup.php' );
-		include( 'functions/post_types.php' );
-		include( 'includes/customize/customizer.php' );
+		include( 'includes/customizer/customizer.php' );
 
 		include( 'includes/walkers/walker-menu.php' );
 		include( 'includes/walkers/walker-comment.php' );
 
 		// Textdomain
-		load_theme_textdomain( 'bramble', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'bramble', $bramble['theme_uri'] . '/includes/languages' );
 
 		// Content Width
 		if ( ! isset( $content_width ) ) $content_width = 1280;
@@ -48,7 +44,7 @@
 		add_image_size( 'gallery', 300, 225, true );
 
 		// Editor
-		add_editor_style( 'stylesheets/editor-style.css' );
+		add_editor_style( 'includes/css/editor-style.css' );
 	}
 
 
@@ -159,7 +155,7 @@
 	{
 		global $bramble;
 
-		wp_register_style( 'style', $bramble['theme_uri'] . '/style.css', '', $bramble['theme_ver'], 'screen' );
+		wp_register_style( 'bramble', $bramble['theme_uri'] . '/style.css', '', $bramble['theme_ver'], 'screen' );
 	}
 
 	// Deregister styles
@@ -171,7 +167,7 @@
 	// Enqueue styles
 	function enqueue_styles()
 	{
-		wp_enqueue_style( 'style' );
+		wp_enqueue_style( 'bramble' );
 	}
 
 	// Login screen styles
@@ -179,7 +175,7 @@
 	{
 		global $bramble;
 
-		echo '<link rel="stylesheet" type="text/css" href="' . $bramble['theme_uri'] . '/includes/css/login.css">';
+		echo '<link rel="stylesheet" type="text/css" href="' . $bramble['theme_uri'] . '/includes/admin/login.css">';
 	}
 
 	// Register admin styles
@@ -187,7 +183,7 @@
 	{
 		global $bramble;
 
-		wp_register_style( 'admin-style', $bramble['theme_uri'] . '/includes/css/admin.css', '', $bramble['theme_ver'], 'screen' );
+		wp_register_style( 'admin-style', $bramble['theme_uri'] . '/includes/admin/admin.css', '', $bramble['theme_ver'], 'screen' );
 	}
 
 	// Enqueue / Print admin styles
@@ -201,7 +197,7 @@
 	{
 		global $bramble;
 
-		echo '<!--[if lt IE9]><link rel="stylesheet" id="ie-css" href="' . $bramble['theme_uri'] . '/css/ie.css" type="text/css" media="screen"><![endif]-->';
+		echo '<!--[if lt IE9]><link rel="stylesheet" id="ie-css" href="' . $bramble['theme_uri'] . '/includes/extras/ie.css" type="text/css" media="screen"><![endif]-->';
 	}
 
 
@@ -212,7 +208,7 @@
 	// Deregister scripts
 	function deregister_scripts()
 	{
-		wp_deregister_script( 'jquery' );
+		// wp_deregister_script( '' );
 	}
 
 	// Register scripts
@@ -220,26 +216,13 @@
 	{
 		global $bramble;
 
-		wp_register_script( 'modernizr', $bramble['theme_uri'] . '/includes/js/modernizr.js', '', '2.6.3', true );
-		wp_register_script( 'mmenu', $bramble['theme_uri'] . '/includes/js/mmenu.js', array( 'jquery' ), '4.0.3', true );
-		wp_register_script( 'sequence', $bramble['theme_uri'] . '/includes/js/sequence.js', array( 'jquery' ), '1.0.1.1', true );
-		wp_register_script( 'sly', $bramble['theme_uri'] . '/includes/js/sly.js', array( 'jquery' ), '1.2.0', true );
-		wp_register_script( 'swipebox', $bramble['theme_uri'] . '/includes/js/swipebox.js', array( 'jquery' ), '1.2.0', true );
-		wp_register_script( 'popup', $bramble['theme_uri'] . '/includes/js/popup.js', array( 'jquery' ), '1.2.0', true );
-		wp_register_script( 'theme', $bramble['theme_uri'] . '/javascripts/theme.js', array( 'jquery' ), $bramble['theme_ver'], true );
+		wp_register_script( 'bramble', $bramble['theme_uri'] . '/javascripts/theme.js', array( 'jquery' ), $bramble['theme_ver'], true );
 	}
 
 	// Enqueue scripts
 	function enqueue_scripts()
 	{
-		wp_enqueue_script( 'modernizr' );
-		wp_enqueue_script( 'jquery', '/wp-includes/js/jquery/jquery.js', null, null, true );
-		wp_enqueue_script( 'mmenu' );
-		wp_enqueue_script( 'sequence' );
-		wp_enqueue_script( 'sly' );
-		wp_enqueue_script( 'swipebox' );
-		wp_enqueue_script( 'popup' );
-		wp_enqueue_script( 'theme' );
+		wp_enqueue_script( 'bramble' );
 
 		if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
 
@@ -390,6 +373,7 @@
 		// unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
 	}
 
+
 /*==================================================*/
 /* User
 /*==================================================*/
@@ -475,3 +459,17 @@
 			 echo '</div>';
 		 }
 	}
+
+	function register_extra_slider_theme( $themes ) {
+		global $bramble;
+
+		$themes['full_image'] = array(
+			'id'	=> 'full_image_slider',
+			'label' => __( 'Full Image', 'bramble' ),
+			'image' => $bramble['theme_uri'] . '/images/theme-options/default-slider.png',
+		);
+
+		return $themes;
+	}
+
+	add_filter( 'bramble_customizer_register_slider_theme', 'register_extra_slider_theme' );
